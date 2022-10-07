@@ -8,13 +8,17 @@ import com.expediagroup.graphql.server.operations.Query
 
 @Suppress("unused")
 class PhotoQueryService : Query {
-    @GraphQLDescription("Return list of posts based on PostSearchParameter options")
+    @GraphQLDescription("Return list of photo based on filter parameter")
     suspend fun photoQuery(filter: PhotoSearchParameters) = Photo.search(filter)
 
+    @GraphQLDescription("Return photo by given id")
     suspend fun photoGet(id: Int) = Photo.getById(id)
 }
 
 data class PhotoSearchParameters(
     val id: Int?,
+    val title: String?,
+    val url: String?,
+    val thumbnailUr: String?,
     val albumId: Int?
 )

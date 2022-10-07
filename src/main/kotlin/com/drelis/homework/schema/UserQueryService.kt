@@ -11,7 +11,7 @@ class UserQueryService : Query {
     @GraphQLDescription("Return list of users based on filter")
     suspend fun userQuery(filter: UserSearchParameters? = null) = User.search(filter)
 
-    @GraphQLDescription("Return users by given id")
+    @GraphQLDescription("Return user by given id")
     suspend fun userGet(id: Int) = User.getById(id)
 }
 

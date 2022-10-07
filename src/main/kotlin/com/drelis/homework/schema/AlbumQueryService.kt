@@ -7,10 +7,10 @@ import com.expediagroup.graphql.server.operations.Query
 
 @Suppress("unused")
 class AlbumQueryService : Query {
-    @GraphQLDescription("Return list of posts based on PostSearchParameter options")
+    @GraphQLDescription("Return list of abums based on filter parameter")
     suspend fun albumQuery(filter: AlbumSearchParameters?) = Album.search(filter)
 
-    @GraphQLDescription("Return list of posts based on PostSearchParameter options")
+    @GraphQLDescription("Return album by a given id")
     suspend fun albumGet(id: Int) = Album.getById(id)
 }
 
